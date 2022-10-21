@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+int main()
+{
+    int i;
+    int idusuario[1000];
+    char nome[30][1000];
+    char email[50][1000];
+    char sexo[15][1000];
+    char endereco[50][1000];
+    double altura[1000];
+    _Bool vacina = true;
+    
+    do {
+        printf("Digite o nome do usuario: ");
+        fgets(nome, 30, stdin);
+        printf("Digite o endereco do usuario: ");
+        fgets(endereco, 50, stdin);
+        printf("Digite o id do usuario: ");
+        scanf("%d", &idusuario);
+        printf("Digite o email do usuario: ");
+        scanf("%s", &email);
+        printf("Digite o sexo do usuario: ");
+        scanf("%s", &sexo);
+        printf("Digite a altura do usuario: ");
+        scanf("%lf", &altura);
+        printf("%s", vacina ? "Vacinou: true\n" : "Não vacinou: false\n");
+        
+        printf("Digite 1 para continuar ou 2 para sair\n");
+        scanf("%d", &i);
+        
+        getchar();
+        
+    } while (i == 1);
+    
+    
+    
+   
+
+    return 0;
+}
