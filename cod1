@@ -1,10 +1,11 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
 int main()
 {
-    int i;
+    int i, usuarios, operacao;
     int idusuario[1000];
     char nome[30][1000];
     char email[50][1000];
@@ -12,8 +13,9 @@ int main()
     char endereco[50][1000];
     double altura[1000];
     _Bool vacina = true;
+    int loop = 1;
     
-    do {
+     do {
         printf("Digite o nome do usuario: ");
         fgets(nome, 30, stdin);
         printf("Digite o endereco do usuario: ");
@@ -28,15 +30,22 @@ int main()
         scanf("%lf", &altura);
         printf("%s", vacina ? "Vacinou: true\n" : "Não vacinou: false\n");
         
-        printf("Digite 1 para continuar ou 2 para sair\n");
+        printf("Digite 1 para registrar mais pessoas ou 2 para parar \n");
         scanf("%d", &i);
         
         getchar();
         
     } while (i == 1);
+   
     
-    
-    
+    while (loop == 1){
+        printf("\n---------BEM VINDO AO SISTEMA---------\n");
+        printf("\n 1- EDITAR USUARIO \n 2- EXCLUIR USUARIO \n 3- BUSCAR USUARIO PELO EMAIL \n 4- IMPRIMIR TODOS OS USUARIOS \n 5- FAZER BACKUP DOS DADOS \n 6- RESTAURAR DADOS\n  ");
+        printf("\nO que você deseja fazer?\n");
+        scanf("%d", &operacao);
+        //colocar o switch case aqui dentro
+    }
+
    
 
     return 0;
