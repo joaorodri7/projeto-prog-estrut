@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -43,7 +42,21 @@ int main()
         printf("\n 1- EDITAR USUARIO \n 2- EXCLUIR USUARIO \n 3- BUSCAR USUARIO PELO EMAIL \n 4- IMPRIMIR TODOS OS USUARIOS \n 5- FAZER BACKUP DOS DADOS \n 6- RESTAURAR DADOS\n  ");
         printf("\nO que você deseja fazer?\n");
         scanf("%d", &operacao);
-        //colocar o switch case aqui dentro
+        
+        switch(operacao){
+            case 1: printf("Editar usuario");
+                break;
+            case 2: printf("Excluir usuario");
+                break;
+            case 3: printf("Buscar usuario");
+                break;
+            case 4: printf("Imprimir usuario");
+                break;
+            case 5: printf("Fazer backup");
+                break;
+            case 6: printf("Restaurar dados");
+                break;
+        }
     }
 
    
