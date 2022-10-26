@@ -25,8 +25,14 @@ int main()
         scanf("%s", &email);
         printf("Digite o sexo do usuario: ");
         scanf("%s", &sexo);
+        
         printf("Digite a altura do usuario: ");
         scanf("%lf", &altura);
+        if (altura[i] < 1 || altura[i] > 2)
+        {
+            printf("Valor invalido\n");
+        }
+      
         printf("%s", vacina ? "Vacinou: true\n" : "Não vacinou: false\n");
         
         printf("Digite 1 para registrar mais pessoas ou 2 para parar \n");
@@ -39,7 +45,7 @@ int main()
     
     while (loop == 1){
         printf("\n---------BEM VINDO AO SISTEMA---------\n");
-        printf("\n 1- EDITAR USUARIO \n 2- EXCLUIR USUARIO \n 3- BUSCAR USUARIO PELO EMAIL \n 4- IMPRIMIR TODOS OS USUARIOS \n 5- FAZER BACKUP DOS DADOS \n 6- RESTAURAR DADOS\n  ");
+        printf("\n 1- EDITAR USUARIO \n 2- EXCLUIR USUARIO \n 3- BUSCAR USUARIO PELO EMAIL \n 4- IMPRIMIR TODOS OS USUARIOS \n 5- FAZER BACKUP DOS DADOS \n 6- RESTAURAR DADOS\n 7- SAIR \n  ");
         printf("\nO que você deseja fazer?\n");
         scanf("%d", &operacao);
         
@@ -56,6 +62,7 @@ int main()
                 break;
             case 6: printf("Restaurar dados");
                 break;
+            case 7: loop = 2;
         }
     }
 
