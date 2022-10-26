@@ -39,3 +39,21 @@ int main()
 
     return 0;
 }
+
+
+
+// PARTE DO IF 
+double altura;
+    
+    
+        printf("Digite a altura: ");
+        scanf("%lf", &altura);
+
+        if (altura >= 1 && altura <= 2)
+        {
+            printf("altura = %.2lfm \n", altura);
+        }
+        else if (altura < 1 || altura > 2) {
+            printf("valor invalido\n");
+        }
+      
