@@ -13,7 +13,7 @@ int main()
         printf("Digite o email do usuario: ");
         scanf("%s", &email);
 
-        if(strcmp(email,"@")==0)
+        if(strchr(email,"@")==0)
         {
             printf("valor valido");
         }
