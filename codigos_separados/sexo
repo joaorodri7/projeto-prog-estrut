@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+
+int main()
+{
+    int i;
+    char sexo[15][1000];
+    
+    
+    do {
+        printf("Qual o seu sexo? \nMasculino - Feminino - Nao identficado ");
+        gets(sexo);
+
+        if(strcmp(sexo,"masculino")==0) || (strcmp(sexo,"Masculino")==0)
+        {
+            printf("valor valido");
+        }
+        else{
+            printf("valor invalido");
+        }
+
+
+        
+        
+        printf("Digite 1 para continuar ou 2 para sair\n");
+        scanf("%d", &i);
+        
+        getchar();
+        
+    } 
+    
+    while (i == 1);
+    
+    
+    
+   
+
+    return 0;
+}
