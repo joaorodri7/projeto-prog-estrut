@@ -26,8 +26,7 @@ int main()
         printf("Digite o endereco do usuario: ");
         fgets(endereco[i], 50, stdin);
         
-        printf("Digite o id do usuario: ");
-        scanf("%d", &idusuario[i]);
+        printf("ID do usuario: %d\n", rand() % 10000);
 		
         printf("Digite o sexo do usuario: ");
         scanf("%s", &sexo[i]);
