@@ -39,3 +39,25 @@ int main()
 
     return 0;
 }
+
+
+// PARTE DO EMAIL
+
+char email[50];
+    char validar = '@';
+    
+    
+        printf("Digite o email do usuario: ");
+        scanf("%s", &email);
+
+        if(strchr(email, validar))
+        {
+            printf("valor valido");
+        }
+        else{
+            printf("valor invalido");
+
+		}
+
+    return 0;
+}
