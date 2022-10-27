@@ -1,0 +1,7 @@
+int main()
+{
+   int i;
+   printf("Gerador de numero: %d", rand() % 10000);
+
+    return 0;
+}
