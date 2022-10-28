@@ -30,6 +30,14 @@ int main()
 		
         printf("Digite o sexo do usuario: ");
         scanf("%s", &sexo[i]);
+        if(strcmp(sexo[i], "masculino") == 0 || (strcmp(sexo[i], "feminino") == 0) || (strcmp(sexo[i], "NI") == 0)) 
+        {
+            loop = 1;
+        }
+        else{
+            printf("Sexo %s nao existe\n", sexo[i]);
+            break;
+        }
         
         printf("Digite a altura do usuario: ");
         scanf("%lf", &altura[i]);
