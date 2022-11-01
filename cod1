@@ -5,7 +5,7 @@
 
 int main()
 {
-    int i, usuarios, operacao;
+    int i, usuarios, operacao, d;
     int idusuario[1000];
     char nome[30][1000];
     char email[50][1000];
@@ -17,6 +17,7 @@ int main()
     int loop = 1;
     
     
+    
     printf("========BEM VINDO AO CADASTRO DE USUARIO========\n\n");
     
      do {
@@ -26,7 +27,8 @@ int main()
         printf("Digite o endereco do usuario: ");
         fgets(endereco[i], 50, stdin);
         
-        printf("ID do usuario: %d\n", rand() % 1000);
+        idusuario[i] = ("%d", rand() % 1000);
+        printf("ID do usuario: %d\n", idusuario[i]);
 		
         printf("Digite o sexo do usuario: ");
         scanf("%s", &sexo[i]);
@@ -65,6 +67,8 @@ int main()
         getchar();
         
     } while (i == 1);
+    
+   
    
     
     while (loop == 1){
@@ -74,13 +78,18 @@ int main()
         scanf("%d", &operacao);
         
         switch(operacao){
-            case 1: printf("Editar usuario");
+            case 1: printf("Editar usuario\n");
+            
                 break;
             case 2: printf("Excluir usuario");
                 break;
             case 3: printf("Buscar usuario");
                 break;
-            case 4: printf("Imprimir usuario");
+            case 4: 
+            	for(i == 0; i < i; i++){
+			printf("Imprimir usuario\n");
+			printf("usuario: %s\nendereco: %s\nsexo:%s\naltura:%lf\nemail:%s\nid do usuario: %d\n",nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
+		}
                 break;
             case 5: printf("Backup Realizado com sucesso!");
                 break;
