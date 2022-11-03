@@ -5,7 +5,7 @@
 
 int main()
 {
-    int i, usuarios, operacao, quantidade, backupid[1000];
+    int i, usuarios, operacao, quantidade, backupid[1000],numerousuario;
     int idusuario[1000];
     char nome[30][1000], backupnome[30][1000], backupemail[30][1000], backupsexo[30][1000], backupendereco[30][1000];
     char email[50][1000];
@@ -24,7 +24,7 @@ int main()
     getchar();
     
     for (i == 0; i < quantidade; i++) {
-        printf("Digite o nome do usuario: ");
+        printf("Digite o nome do usuario %i: ",i+0);
         fgets(nome[i], 30, stdin);
         
         printf("Digite o endereco do usuario: ");
@@ -77,32 +77,48 @@ int main()
         switch(operacao){
             case 1: printf("Editar usuario\n");
             
-            printf("Digite o id no qual deseja alterar os dados: ");
-            scanf("%d", &idusuario[i]);
-            
-            if(idusuario[i]==0){
-            printf("Id nao encontrado!\n");
-			}
-            
-			else {
-                printf("Digite o novo email ou confirme o anterior:\n");
-            	scanf("%s", &email);
+            printf("Digite o numero do usuario: ");
+            scanf("%d", &numerousuario);
+
+            	
                  
-                printf("Digite o novo endereco ou confirme o anterior:\n ");
-                scanf("%s", &endereco);
+                printf("Digite o novo endereco ou confirme o anterior(%s):\n ",endereco[numerousuario]);
+                scanf("%s", &endereco[numerousuario]);
                 
-                printf("Digite o novo nome ou confirme o anterior:\n ");
-                scanf("%s", &nome);
+                printf("Digite o novo nome ou confirme o anterior(%s):\n ",nome[numerousuario]);
+                scanf("%s", &nome[numerousuario]);
                 
-                printf("Digite o novo sexo ou confirme o anterior:\n ");
-                scanf("%s", &sexo);
+                printf("Digite o novo sexo ou confirme o anterior(%s):\n ",sexo[numerousuario]);
+                scanf("%s", &sexo[numerousuario]);
+                if(strcmp(sexo[numerousuario], "masculino") == 0 || (strcmp(sexo[numerousuario], "feminino") == 0) || (strcmp(sexo[numerousuario], "NI") == 0)) 
+        {
+            loop = 1;
+        }
+        else{
+            printf("Sexo %s nao existe\n", sexo[i]);
+            break;
+        }
                 
-                printf("Digite a nova altura ou confirme o anterior:\n ");
-                scanf("%lf", &altura);
-		
-		printf("Alteracao realizada com sucesso!");
-			}
+                printf("Digite a nova altura ou confirme o anterior(%.2lf):\n ",altura[numerousuario]);
+                scanf("%lf", &altura[numerousuario]);
+                if (altura[numerousuario] < 1 || altura[numerousuario] > 2)
+        {
+            printf("Altura invalida\n");
+        }
+        printf("Digite o novo email ou confirme o anterior(%s):\n",email[numerousuario]);
+            	scanf("%s", &email[numerousuario]);
+            	
+				if (strchr(email[numerousuario], verificar))
+		{
+            printf("Alteracao realizada com sucesso!");
+        }
+        else{
+        	printf("Nao foi possivel alterar cadastro. Email invalido. \n");
+		}
             
+    
+
+        
                 break;
             case 2: printf("Excluir usuario");
                 break;
@@ -111,7 +127,7 @@ int main()
             case 4: 
             printf("USUARIOS: \n");
             	for(i = 0; i < quantidade; i++){
-			printf(" usuario: %s\n endereco: %s\n sexo:%s\n altura:%.2lf\n email:%s\n id do usuario: %d\n",nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
+			printf("Usuario %i: %s\nendereco: %s\nsexo:%s\naltura:%.2lf\nemail:%s\nid do usuario: %d\n",i+0,nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
 		}
                 break;
             case 5: printf("Backup Realizado com sucesso!");
