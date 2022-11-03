@@ -8,7 +8,7 @@ int main()
     int i, usuarios, operacao, quantidade, idprocurar, backupid[1000];
     int idusuario[1000];
     char nome[30][1000], backupnome[30][1000], backupemail[30][1000], backupsexo[30][1000], backupendereco[30][1000];
-    char email[50][1000];
+    char email[50][1000], buscaremail[50];
     char sexo[15][1000];
     char endereco[50][1000];
     char verificar = '@';
@@ -110,8 +110,18 @@ int main()
                 break;
             case 2: printf("Excluir usuario");
                 break;
-            case 3: printf("Buscar usuario");
+            case 3: printf("Digite o email do usuario: ");
+                    scanf("%s", &buscaremail);
+                    
+                    if(strstr(email, buscaremail)){
+                        printf(" usuario: %s\n endereco: %s\n sexo:%s\n altura:%.2lf\n email:%s\n id do usuario: %d\n",nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
+                    }
+                    else{
+                        printf("Email nao encontrado!");
+                    }
+                    
                 break;
+                
             case 4: 
             printf("USUARIOS: \n");
             	for(i = 0; i < quantidade; i++){
@@ -142,3 +152,4 @@ int main()
 
     return 0;
 }
+
