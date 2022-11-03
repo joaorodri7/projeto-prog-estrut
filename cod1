@@ -5,14 +5,14 @@
 
 int main()
 {
-    int i, usuarios, operacao, quantidade;
+    int i, usuarios, operacao, quantidade, backupid[1000];
     int idusuario[1000];
-    char nome[30][1000];
+    char nome[30][1000], backupnome[30][1000], backupemail[30][1000], backupsexo[30][1000], backupendereco[30][1000];
     char email[50][1000];
     char sexo[15][1000];
     char endereco[50][1000];
     char verificar = '@';
-    double altura[1000];
+    double altura[1000], backupaltura[1000];
     bool vacina = true;
     int loop = 1;
     
@@ -67,7 +67,7 @@ int main()
         
     } 
        
-    
+       
     while (loop == 1){
         printf("\n---------BEM VINDO AO SISTEMA---------\n");
         printf("\n 1- EDITAR USUARIO \n 2- EXCLUIR USUARIO \n 3- BUSCAR USUARIO PELO EMAIL \n 4- IMPRIMIR TODOS OS USUARIOS \n 5- FAZER BACKUP DOS DADOS \n 6- RESTAURAR DADOS\n 7- SAIR \n  ");
@@ -85,17 +85,30 @@ int main()
             case 4: 
             printf("USUARIOS: \n");
             	for(i = 0; i < quantidade; i++){
-			printf("\n usuario: %s endereco: %s sexo:%s\n altura:%lf\n email:%s\n id do usuario: %d\n",nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
+			printf("\n usuario: %s endereco: %s sexo:%s\n altura:%.2lf\n email:%s\n id do usuario: %d\n",nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
 		}
                 break;
             case 5: printf("Backup Realizado com sucesso!");
+            for(i = 0; i < quantidade; i++){
+            	backupid[i] = idusuario[i];
+            	strcpy(backupnome[i], nome[i]);
+            	strcpy(backupendereco[i], endereco[i]);
+            	strcpy(backupsexo[i], sexo[i]);
+            	backupaltura[i] = altura[i];
+            	strcpy(backupemail[i], email[i]);
+			}
                 break;
             case 6: printf("Dados restaurados com sucesso!");
+            	idusuario[i] = backupid[i];
+            	strcpy(nome[i], backupnome[i]);
+            	strcpy(endereco[i], backupendereco[i]);
+            	strcpy(sexo[i], backupsexo[i]);
+            	altura[i] = backupaltura[i];
+            	strcpy(email[i], backupemail[i]);
                 break;
             case 7: loop = 2;
         }
     }
 
-   
     return 0;
 }
