@@ -77,6 +77,30 @@ int main()
         switch(operacao){
             case 1: printf("Editar usuario\n");
             
+            printf("Digite o id no qual deseja alterar os dados: ");
+            scanf("%d", &idusuario[i]);
+            
+            if(idusuario[i]==0){
+            printf("Id nao encontrado!\n");
+			}
+            
+			else {
+                printf("Digite o novo email ou confirme o anterior:\n");
+            	scanf("%s", &email);
+                 
+                printf("Digite o novo endereco ou confirme o anterior:\n ");
+                scanf("%s", &endereco);
+                
+                printf("Digite o novo nome ou confirme o anterior:\n ");
+                scanf("%s", &nome);
+                
+                printf("Digite o novo sexo ou confirme o anterior:\n ");
+                scanf("%s", &sexo);
+                
+                printf("Digite a nova altura ou confirme o anterior:\n ");
+                scanf("%lf", &altura);
+			}
+            
                 break;
             case 2: printf("Excluir usuario");
                 break;
