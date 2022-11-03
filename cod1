@@ -5,7 +5,7 @@
 
 int main()
 {
-    int i, usuarios, operacao, d, quantidade;
+    int i, usuarios, operacao, quantidade;
     int idusuario[1000];
     char nome[30][1000];
     char email[50][1000];
@@ -17,14 +17,13 @@ int main()
     int loop = 1;
     
     
-    
     printf("========BEM VINDO AO CADASTRO DE USUARIO========\n\n");
     
     printf("Quantos usuarios voce deseja registrar? ");
     scanf("%d", &quantidade);
     getchar();
     
-    for (d == 0; d < quantidade; d++) {
+    for (i == 0; i < quantidade; i++) {
         printf("Digite o nome do usuario: ");
         fgets(nome[i], 30, stdin);
         
@@ -84,9 +83,9 @@ int main()
             case 3: printf("Buscar usuario");
                 break;
             case 4: 
-            	for(d == 0; d < i; d++){
-			printf("Imprimir usuario\n");
-			printf("usuario: %s\nendereco: %s\nsexo:%s\naltura:%lf\nemail:%s\nid do usuario: %d\n",nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
+            printf("USUARIOS: \n");
+            	for(i = 0; i < quantidade; i++){
+			printf("\n usuario: %s endereco: %s sexo:%s\n altura:%lf\n email:%s\n id do usuario: %d\n",nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
 		}
                 break;
             case 5: printf("Backup Realizado com sucesso!");
