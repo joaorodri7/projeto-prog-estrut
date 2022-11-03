@@ -5,7 +5,7 @@
 
 int main()
 {
-    int i, usuarios, operacao, d;
+    int i, usuarios, operacao, d, quantidade;
     int idusuario[1000];
     char nome[30][1000];
     char email[50][1000];
@@ -20,7 +20,11 @@ int main()
     
     printf("========BEM VINDO AO CADASTRO DE USUARIO========\n\n");
     
-     do {
+    printf("Quantos usuarios voce deseja registrar? ");
+    scanf("%d", &quantidade);
+    getchar();
+    
+    for (d == 0; d < quantidade; d++) {
         printf("Digite o nome do usuario: ");
         fgets(nome[i], 30, stdin);
         
@@ -59,17 +63,11 @@ int main()
         else{
         	printf("Nao foi possivel realizar o cadastro. Email invalido. \n");
 		}
-		
-        
-        printf("Digite 1 para registrar mais pessoas ou 2 para parar \n");
-        scanf("%d", &i);
         
         getchar();
         
-    } while (i == 1);
-    
-   
-   
+    } 
+       
     
     while (loop == 1){
         printf("\n---------BEM VINDO AO SISTEMA---------\n");
@@ -86,7 +84,7 @@ int main()
             case 3: printf("Buscar usuario");
                 break;
             case 4: 
-            	for(i == 0; i < i; i++){
+            	for(d == 0; d < i; d++){
 			printf("Imprimir usuario\n");
 			printf("usuario: %s\nendereco: %s\nsexo:%s\naltura:%lf\nemail:%s\nid do usuario: %d\n",nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
 		}
@@ -100,6 +98,5 @@ int main()
     }
 
    
-
     return 0;
 }
