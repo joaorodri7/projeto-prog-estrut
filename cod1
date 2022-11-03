@@ -111,7 +111,7 @@ int main()
             case 4: 
             printf("USUARIOS: \n");
             	for(i = 0; i < quantidade; i++){
-			printf("\n usuario: %s endereco: %s sexo:%s\n altura:%.2lf\n email:%s\n id do usuario: %d\n",nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
+			printf(" usuario: %s\n endereco: %s\n sexo:%s\n altura:%.2lf\n email:%s\n id do usuario: %d\n",nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
 		}
                 break;
             case 5: printf("Backup Realizado com sucesso!");
