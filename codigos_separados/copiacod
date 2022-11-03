@@ -1,0 +1,145 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+
+int main()
+{
+    int i, usuarios, operacao, quantidade, backupid[1000];
+    int idusuario[1000];
+    char nome[30][1000], backupnome[30][1000], backupemail[30][1000], backupsexo[30][1000], backupendereco[30][1000];
+    char email[50][1000];
+    char sexo[15][1000];
+    char endereco[50][1000];
+    char verificar = '@';
+    double altura[1000], backupaltura[1000];
+    bool vacina = true;
+    int loop = 1;
+    
+    
+    printf("========BEM VINDO AO CADASTRO DE USUARIO========\n\n");
+    
+    printf("Quantos usuarios voce deseja registrar? ");
+    scanf("%d", &quantidade);
+    getchar();
+    
+    for (i == 0; i < quantidade; i++) {
+        printf("Digite o nome do usuario: ");
+        fgets(nome[i], 30, stdin);
+        
+        printf("Digite o endereco do usuario: ");
+        fgets(endereco[i], 50, stdin);
+        
+        idusuario[i] = ("%d", rand() % 1000);
+        printf("ID do usuario: %d\n", idusuario[i]);
+		
+        printf("Digite o sexo do usuario: ");
+        scanf("%s", &sexo[i]);
+        if(strcmp(sexo[i], "masculino") == 0 || (strcmp(sexo[i], "feminino") == 0) || (strcmp(sexo[i], "NI") == 0)) 
+        {
+            loop = 1;
+        }
+        else{
+            printf("Sexo %s nao existe\n", sexo[i]);
+            break;
+        }
+        
+        printf("Digite a altura do usuario: ");
+        scanf("%lf", &altura[i]);
+        if (altura[i] < 1 || altura[i] > 2)
+        {
+            printf("Altura invalida\n");
+        }
+  
+        printf("%s", vacina ? "Vacinou: true\n" : "Não vacinou: false\n");
+        
+        printf("Digite o email do usuario: ");
+        scanf("%s", &email[i]);
+    	if (strchr(email[i], verificar))
+		{
+            printf("Cadastro realizado com sucesso.\n");
+        }
+        else{
+        	printf("Nao foi possivel realizar o cadastro. Email invalido. \n");
+		}
+        
+        getchar();
+        
+    } 
+       
+       
+    while (loop == 1){
+        printf("\n---------BEM VINDO AO SISTEMA---------\n");
+        printf("\n 1- EDITAR USUARIO \n 2- EXCLUIR USUARIO \n 3- BUSCAR USUARIO PELO EMAIL \n 4- IMPRIMIR TODOS OS USUARIOS \n 5- FAZER BACKUP DOS DADOS \n 6- RESTAURAR DADOS\n 7- SAIR \n  ");
+        printf("\nO que voce deseja fazer?\n");
+        scanf("%d", &operacao);
+        
+        switch(operacao){
+            case 1: 
+            
+            printf("Digite o id no qual deseja alterar os dados: ");
+            scanf("%d", &idusuario[i]);
+            
+            getchar();
+            
+            if(idusuario[i]==0){
+            printf("Id nao encontrado!\n");
+			}
+            
+			else {
+			    
+			    printf("Digite o novo nome ou confirme o anterior: ");
+                fgets(nome[i], 30, stdin);
+                
+                printf("Digite o novo endereco ou confirme o anterior: ");
+                fgets(endereco[i], 30, stdin);
+                
+                printf("Digite o novo sexo ou confirme o anterior: ");
+                scanf("%s", &sexo[i]);
+                
+                printf("Digite a nova altura ou confirme o anterior: ");
+                scanf("%lf", &altura[i]);
+                
+                printf("Digite o novo email ou confirme o anterior: ");
+            	scanf("%s", &email[i]);
+                
+                getchar();
+		
+		printf("Dados alterados com sucesso!");
+			}
+            
+                break;
+            case 2: printf("Excluir usuario");
+                break;
+            case 3: printf("Buscar usuario");
+                break;
+            case 4: 
+            printf("USUARIOS: \n");
+            	for(i = 0; i < quantidade; i++){
+			printf(" usuario: %s endereco: %s sexo:%s\n altura:%.2lf\n email:%s\n id do usuario: %d\n",nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
+		}
+                break;
+            case 5: printf("Backup Realizado com sucesso!");
+            for(i = 0; i < quantidade; i++){
+            	backupid[i] = idusuario[i];
+            	strcpy(backupnome[i], nome[i]);
+            	strcpy(backupendereco[i], endereco[i]);
+            	strcpy(backupsexo[i], sexo[i]);
+            	backupaltura[i] = altura[i];
+            	strcpy(backupemail[i], email[i]);
+			}
+                break;
+            case 6: printf("Dados restaurados com sucesso!");
+            	idusuario[i] = backupid[i];
+            	strcpy(nome[i], backupnome[i]);
+            	strcpy(endereco[i], backupendereco[i]);
+            	strcpy(sexo[i], backupsexo[i]);
+            	altura[i] = backupaltura[i];
+            	strcpy(email[i], backupemail[i]);
+                break;
+            case 7: loop = 2;
+        }
+    }
+
+    return 0;
+}
