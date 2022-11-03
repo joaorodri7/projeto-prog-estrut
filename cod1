@@ -99,6 +99,8 @@ int main()
                 
                 printf("Digite a nova altura ou confirme o anterior:\n ");
                 scanf("%lf", &altura);
+		
+		printf("Alteracao realizada com sucesso!");
 			}
             
                 break;
