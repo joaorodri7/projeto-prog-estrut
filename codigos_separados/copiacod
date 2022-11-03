@@ -5,7 +5,7 @@
 
 int main()
 {
-    int i, usuarios, operacao, quantidade, backupid[1000];
+    int i, usuarios, operacao, quantidade, idprocurar, backupid[1000];
     int idusuario[1000];
     char nome[30][1000], backupnome[30][1000], backupemail[30][1000], backupsexo[30][1000], backupendereco[30][1000];
     char email[50][1000];
@@ -78,17 +78,14 @@ int main()
             case 1: 
             
             printf("Digite o id no qual deseja alterar os dados: ");
-            scanf("%d", &idusuario[i]);
+            scanf("%d", &idprocurar);
             
-            getchar();
             
-            if(idusuario[i]==0){
-            printf("Id nao encontrado!\n");
-			}
-            
-			else {
-			    
-			    printf("Digite o novo nome ou confirme o anterior: ");
+            if(idprocurar = idusuario){
+                
+                getchar();
+                
+                printf("Digite o novo nome ou confirme o anterior: ");
                 fgets(nome[i], 30, stdin);
                 
                 printf("Digite o novo endereco ou confirme o anterior: ");
@@ -104,8 +101,10 @@ int main()
             	scanf("%s", &email[i]);
                 
                 getchar();
-		
-		printf("Dados alterados com sucesso!");
+			}
+            
+			else {
+			   printf("Id nao encontrado!");
 			}
             
                 break;
