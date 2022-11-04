@@ -122,7 +122,16 @@ int main()
                 break;
             case 2: printf("Excluir usuario");
                 break;
-            case 3: printf("Buscar usuario");
+            case 3: printf("Digite o email do usuario: ");
+                    scanf("%s", &buscaremail);
+                    
+                    if(strstr(buscaremail, email[i])){
+                        printf(" usuario: %s endereco: %s sexo:%s\n altura:%.2lf\n email:%s\n id do usuario: %d\n",nome,endereco,sexo,altura,email,idusuario);
+                    }
+                    else{
+                        printf("Email nao encontrado!");
+                    }
+                    
                 break;
             case 4: 
             printf("USUARIOS: \n");
