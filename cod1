@@ -8,7 +8,7 @@
 int main()
 {
 	
-    int i, usuarios, operacao, quantidade, backupid[1000],numerousuario;
+    int i, operacao, quantidade, backupid[1000],numerousuario;
     int idusuario[1000];
     char buscaremail[50],nome[30][1000], backupnome[30][1000], backupemail[30][1000], backupsexo[30][1000], backupendereco[30][1000];
     char email[50][1000];
