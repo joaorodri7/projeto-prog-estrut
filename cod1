@@ -124,6 +124,25 @@ int main()
                 break;
             case 2: printf("Digite o numero do usuario que deseja excluir: ");
             		scanf("%d", &numerousuario);
+            		
+            		
+            	printf("Digite 0 para excluir o usuario!");
+            	scanf("%d", &numerousuario);
+                
+                printf("Nome apagado.",nome[numerousuario]);
+                scanf("%s", &nome[numerousuario]);
+                
+                fflush(stdin);
+                
+				printf("Endereco apagado.",endereco[numerousuario]);
+                fgets(endereco[numerousuario],50,stdin);
+                
+                printf("Sexo apagado.",sexo[numerousuario]);
+                scanf("%s", &sexo[numerousuario]);
+                if(strcmp(sexo[numerousuario], "masculino") == 0 || (strcmp(sexo[numerousuario], "feminino") == 0) || (strcmp(sexo[numerousuario], "NI") == 0))rio], "feminino") == 0) || (strcmp(sexo[numerousuario], "NI") == 0)) 
+            		
+            		
+            		
                 break;
             case 3: printf("Digite o email do usuario: ");
                     fflush(stdin);
