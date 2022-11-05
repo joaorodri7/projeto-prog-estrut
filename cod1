@@ -28,7 +28,7 @@ int main()
     getchar();
     
     for (i == 0; i < quantidade; i++) {
-        printf("Digite o nome do usuario %i: ",i+0);
+        printf("Digite o nome do usuario: ");
         fgets(nome[i], 30, stdin);
         
         printf("Digite o endereco do usuario: ");
@@ -37,7 +37,7 @@ int main()
         idusuario[i] = ("%d", rand() % 1000);
         printf("ID do usuario: %d\n", idusuario[i]);
 		
-        printf("Digite o sexo do usuario: ");
+        printf("Digite o sexo do usuario(Masculino - Feminino - Nao identificado(NI)):");
         scanf("%s", &sexo[i]);
         if(strcmp(sexo[i], "masculino") == 0 || (strcmp(sexo[i], "feminino") == 0) || (strcmp(sexo[i], "NI") == 0)) 
         {
@@ -68,6 +68,9 @@ int main()
 		}
         
         getchar();
+        system("cls");
+
+        
         
     } 
        
@@ -77,6 +80,8 @@ int main()
         printf("\n 1- EDITAR USUARIO \n 2- EXCLUIR USUARIO \n 3- BUSCAR USUARIO PELO EMAIL \n 4- IMPRIMIR TODOS OS USUARIOS \n 5- FAZER BACKUP DOS DADOS \n 6- RESTAURAR DADOS\n 7- SAIR \n  ");
         printf("\nO que voce deseja fazer?\n");
         scanf("%d", &operacao);
+        system("cls");
+
         
         switch(operacao){
             case 1: printf("Editar usuario\n");
@@ -127,7 +132,25 @@ int main()
 
         
                 break;
-            case 2: printf("Excluir usuario");
+            case 2: printf("Excluir usuario\n");
+            
+            printf("Digite o numero do usuario: ");
+            scanf("%d", &numerousuario);
+            
+            printf("\nConfirme as informacoes: ");
+            
+            	
+                    printf("nome: %s\n",nome[numerousuario]);
+					printf("Endereco: %s\n",endereco[numerousuario]);
+                    printf("Id do usuario: %i\n",idusuario[numerousuario]);
+                    printf("Sexo: %s\n",sexo[numerousuario]);
+                    printf("Altura:%.2lf\n",altura[numerousuario]);
+                    printf("Email:%s",email[numerousuario]);
+                    
+                   
+                
+            
+            
                 break;
             case 3: printf("Digite o email do usuario: ");
                     fflush(stdin);
@@ -137,7 +160,8 @@ int main()
                     for (i=0; i<quantidade; i++){
                     if(strstr(buscaremail, email[i])){
                     
-					printf("\nUSUARIO %i\n",i+0);	
+					printf("\nUSUARIO %i\n",i+0);
+					printf("Nome: %s",nome[i]);	
                     printf("Endereco: %s\n",endereco[i]);
                     printf("Id do usuario: %i\n",idusuario[i]);
                     printf("Sexo: %s\n",sexo[i]);
