@@ -20,7 +20,7 @@ int main()
     bool vacina = true;
     int loop = 1;
     
-    
+     
 	printf("========BEM VINDO AO CADASTRO DE USUARIO========\n\n");
     
     printf("Quantos usuarios voce deseja registrar? ");
@@ -37,7 +37,7 @@ int main()
         idusuario[i] = ("%d", rand() % 1000);
         printf("ID do usuario: %d\n", idusuario[i]);
 		
-        printf("Digite o sexo do usuario: ");
+        printf("Digite o sexo do usuario(masculino - feminino - nao identificado(NI)): ");
         scanf("%s", &sexo[i]);
         if(strcmp(sexo[i], "masculino") == 0 || (strcmp(sexo[i], "feminino") == 0) || (strcmp(sexo[i], "NI") == 0)) 
         {
@@ -57,6 +57,7 @@ int main()
   
         printf("%s", vacina ? "Vacinou: true\n" : "Não vacinou: false\n");
         
+        
         printf("Digite o email do usuario: ");
         scanf("%s", &email[i]);
     	if (strchr(email[i], verificar))
@@ -68,23 +69,24 @@ int main()
 		}
         
         getchar();
-        
+       
     } 
     
     
-    
+    system("cls");
       
     while (loop == 1){
         
-		
+	
 		printf("\n---------BEM VINDO AO SISTEMA---------\n");
         printf("\n 1- EDITAR USUARIO \n 2- EXCLUIR USUARIO \n 3- BUSCAR USUARIO PELO EMAIL \n 4- IMPRIMIR TODOS OS USUARIOS \n 5- FAZER BACKUP DOS DADOS \n 6- RESTAURAR DADOS\n 7- SAIR \n  ");
         printf("\nO que voce deseja fazer?\n");
         scanf("%d", &operacao);
         
         switch(operacao){
+        	
             case 1: printf("Editar usuario\n");
-            
+            system("cls");
             printf("Digite o numero do usuario: ");
             scanf("%d", &numerousuario);
                 
@@ -126,8 +128,10 @@ int main()
             
         
                 break;
+    
                 
             case 2:
+            	system("cls");
       printf("Digite o numero do usuario que deseja excluir: ");
       scanf("%d", &numerousuario);
 
@@ -149,19 +153,22 @@ int main()
     
       break;
       
-            case 3: printf("Digite o email do usuario: ");
+            case 3:
+			system("cls");
+			 printf("Digite o email do usuario: ");
                     fflush(stdin);
 					fgets(buscaremail,50,stdin);
                     
                     for (i=0; i<quantidade; i++){
                     if(strstr(buscaremail, email[i])){
                     
-					printf("\nUSUARIO %i\n",i+0);	
-                    printf("Endereco: %s\n",endereco[i]);
+					printf("\nUSUARIO %i\n",i+0);
+					printf("Nome: %s",nome[i]);	
+                    printf("Endereco: %s",endereco[i]);
                     printf("Id do usuario: %i\n",idusuario[i]);
                     printf("Sexo: %s\n",sexo[i]);
                     printf("Altura:%.2lf\n",altura[i]);
-                    printf("Email:%s",email[i]);
+                    printf("Email:%s\n",email[i]);
                     
                     }
 					
@@ -169,12 +176,14 @@ int main()
                     
                 break;
             case 4: 
+            
             printf("USUARIOS: \n");
             	for(i = 0; i < quantidade; i++){
 			printf("\nUsuario %i: %sendereco: %ssexo:%s\naltura:%.2lf\nemail:%s\nid do usuario: %d\n",i+0,nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
 		}
                 break;
-            case 5: printf("Backup Realizado com sucesso!");
+            case 5: 
+			printf("Backup Realizado com sucesso!");
             for(i = 0; i < quantidade; i++){
             	backupid[i] = idusuario[i];
             	strcpy(backupnome[i], nome[i]);
@@ -185,20 +194,25 @@ int main()
 			}
                 break;
             case 6: printf("Dados restaurados com sucesso!");
-            	idusuario[i] = backupid[i];
+            	for(i = 0; i < quantidade; i++){
+				idusuario[i] = backupid[i];
             	strcpy(nome[i], backupnome[i]);
             	strcpy(endereco[i], backupendereco[i]);
             	strcpy(sexo[i], backupsexo[i]);
             	altura[i] = backupaltura[i];
             	strcpy(email[i], backupemail[i]);
-                break;
+            }
+				break;
+                
 
     
             case 7: loop = 2;
             
         
         }
+        
     }
-
+    
+    
     return 0;
 }
