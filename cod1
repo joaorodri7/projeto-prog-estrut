@@ -179,7 +179,7 @@ int main()
             
             printf("USUARIOS: \n");
             	for(i = 0; i < quantidade; i++){
-			printf("\nUsuario %i:  %sendereco: %ssexo:%s\naltura:%.2lf\nemail:%s\nid do usuario: %d\n",i+0,nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
+			printf("\nUsuario %i:  %s endereco: %ssexo:%s\naltura:%.2lf\nemail:%s\nid do usuario: %d\n",i+0,nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
 		}
                 break;
             case 5: 
