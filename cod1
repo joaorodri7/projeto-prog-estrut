@@ -21,7 +21,7 @@ int main()
     int loop = 1;
     
     
-    printf("========BEM VINDO AO CADASTRO DE USUARIO========\n\n");
+	printf("========BEM VINDO AO CADASTRO DE USUARIO========\n\n");
     
     printf("Quantos usuarios voce deseja registrar? ");
     scanf("%d", &quantidade);
@@ -70,9 +70,14 @@ int main()
         getchar();
         
     } 
-       
+    
+    
+    
+      
     while (loop == 1){
-        printf("\n---------BEM VINDO AO SISTEMA---------\n");
+        
+		
+		printf("\n---------BEM VINDO AO SISTEMA---------\n");
         printf("\n 1- EDITAR USUARIO \n 2- EXCLUIR USUARIO \n 3- BUSCAR USUARIO PELO EMAIL \n 4- IMPRIMIR TODOS OS USUARIOS \n 5- FAZER BACKUP DOS DADOS \n 6- RESTAURAR DADOS\n 7- SAIR \n  ");
         printf("\nO que voce deseja fazer?\n");
         scanf("%d", &operacao);
@@ -128,9 +133,14 @@ int main()
 
     if (numerousuario < quantidade){
       	printf("Usuario excluido!");
-      	strcpy(nome[numerousuario], "Usuario excluido\t");
-    	strcpy(sexo[numerousuario], excluido);
-    	strcpy(endereco[numerousuario], excluido);
+      	strcpy(nome[numerousuario], nome[-1]);
+    	strcpy(sexo[numerousuario], sexo[-1]);
+    	strcpy(endereco[numerousuario], endereco[-1]);
+    	strcpy(email[numerousuario], email[-1]);
+    	altura[numerousuario]=altura[-1];
+    	idusuario[numerousuario]=idusuario[-1];
+    	
+    	
     	fflush(stdin);
 	  }
     else{
@@ -182,7 +192,11 @@ int main()
             	altura[i] = backupaltura[i];
             	strcpy(email[i], backupemail[i]);
                 break;
+
+    
             case 7: loop = 2;
+            
+        
         }
     }
 
