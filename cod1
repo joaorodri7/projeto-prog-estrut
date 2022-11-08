@@ -156,8 +156,7 @@ int main()
             case 3:
 			system("cls");
 			 printf("Digite o email do usuario: ");
-                    fflush(stdin);
-					fgets(buscaremail,50,stdin);
+             scanf("%s", &buscaremail);      
                     
                     for (i=0; i<quantidade; i++){
                     if(strstr(buscaremail, email[i])){
@@ -171,7 +170,7 @@ int main()
                     printf("Email:%s\n",email[i]);
                     
                     }
-					
+				
 					}
                     
                 break;
@@ -179,7 +178,7 @@ int main()
             
             printf("USUARIOS: \n");
             	for(i = 0; i < quantidade; i++){
-			printf("\nUsuario %i:  %s endereco: %ssexo:%s\naltura:%.2lf\nemail:%s\nid do usuario: %d\n",i+0,nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
+			printf("\nUsuario %i:  %s\nendereco: %ssexo:%s\naltura:%.2lf\nemail:%s\nid do usuario: %d\n",i+0,nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
 		}
                 break;
             case 5: 
