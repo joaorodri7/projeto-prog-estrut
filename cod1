@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -89,11 +90,11 @@ int main()
             system("cls");
             printf("Digite o numero do usuario: ");
             scanf("%d", &numerousuario);
+            
+                getchar();
                 
                 printf("Digite o novo nome ou confirme o anterior(%s):\n ",nome[numerousuario]);
-                scanf("%s", &nome[numerousuario]);
-                
-                fflush(stdin);
+                fgets(nome[numerousuario], 30, stdin);
                 
 				printf("Digite o novo endereco ou confirme o anterior(%s):\n ",endereco[numerousuario]);
                 fgets(endereco[numerousuario],50,stdin);
