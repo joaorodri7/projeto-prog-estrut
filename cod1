@@ -1,10 +1,15 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
 #include <string.h>
 
+struct endereco{
+    int rua;
+    long int cep;
+    char cidade[20], estado[2];
+}
 
+end[1000];
 
 int main()
 {
@@ -15,7 +20,6 @@ int main()
     char email[50][1000];
     char excluido[15] = {'\0'};
     char sexo[15][1000];
-    char endereco[50][1000];
     char verificar = '@';
     double altura[1000], backupaltura[1000];
     bool vacina = true;
@@ -32,8 +36,18 @@ int main()
         printf("Digite o nome do usuario %i: ",i+0);
         fgets(nome[i], 30, stdin);
         
-        printf("Digite o endereco do usuario: ");
-        fgets(endereco[i], 50, stdin);
+        printf("Digite a rua do usuario: ");
+        scanf("%d", &end[i].rua);
+        
+        printf("Digite o cep do usuario: ");
+        scanf("%lld", &end[i].cep);
+        getchar();
+        
+        printf("Digite a cidade do usuario: ");
+        fgets(end[i].cidade, 20, stdin);
+        
+        printf("Digite o estado do usuario: ");
+        scanf("%s", &end[i].estado);
         
         idusuario[i] = ("%d", rand() % 1000);
         printf("ID do usuario: %d\n", idusuario[i]);
@@ -96,8 +110,17 @@ int main()
                 printf("Digite o novo nome ou confirme o anterior(%s):\n ",nome[numerousuario]);
                 fgets(nome[numerousuario], 30, stdin);
                 
-				printf("Digite o novo endereco ou confirme o anterior(%s):\n ",endereco[numerousuario]);
-                fgets(endereco[numerousuario],50,stdin);
+				printf("Digite a nova rua ou confirme a anterior(%d):\n ",end->rua);
+                scanf("%d", &end->rua);
+                
+                printf("Digite o novo cep ou confirme o anterior(%d):\n ",end->cep);
+                scanf("%lld", &end->cep);
+                
+                printf("Digite a nova cidade ou confirme a anterior(%s):\n ",end->cidade);
+                fgets(end->cidade[numerousuario], 20, stdin);
+                
+                printf("Digite o novo estado ou confirme o anterior(%s):\n ",end->estado);
+                scanf("%s", &end->estado);
                 
                 printf("Digite o novo sexo ou confirme o anterior(%s):\n ",sexo[numerousuario]);
                 scanf("%s", &sexo[numerousuario]);
@@ -140,7 +163,7 @@ int main()
       	printf("Usuario excluido!");
       	strcpy(nome[numerousuario], nome[-1]);
     	strcpy(sexo[numerousuario], sexo[-1]);
-    	strcpy(endereco[numerousuario], endereco[-1]);
+    	//strcpy(endereco[numerousuario], endereco[-1]);
     	strcpy(email[numerousuario], email[-1]);
     	altura[numerousuario]=altura[-1];
     	idusuario[numerousuario]=idusuario[-1];
@@ -164,7 +187,7 @@ int main()
                     
 					printf("\nUSUARIO %i\n",i+0);
 					printf("Nome: %s\n",nome[i]);	
-                    printf("Endereco: %s",endereco[i]);
+                    //printf("Endereco: %s",endereco[i]);
                     printf("Id do usuario: %i\n",idusuario[i]);
                     printf("Sexo: %s\n",sexo[i]);
                     printf("Altura:%.2lf\n",altura[i]);
@@ -179,7 +202,7 @@ int main()
             
             printf("USUARIOS: \n");
             	for(i = 0; i < quantidade; i++){
-			printf("\nUsuario %i:  %s\nendereco: %ssexo:%s\naltura:%.2lf\nemail:%s\nid do usuario: %d\n",i+0,nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
+			//printf("\nUsuario %i:  %s\nendereco: %ssexo:%s\naltura:%.2lf\nemail:%s\nid do usuario: %d\n",i+0,nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
 		}
                 break;
             case 5: 
@@ -187,7 +210,7 @@ int main()
             for(i = 0; i < quantidade; i++){
             	backupid[i] = idusuario[i];
             	strcpy(backupnome[i], nome[i]);
-            	strcpy(backupendereco[i], endereco[i]);
+            	//strcpy(backupendereco[i], endereco[i]);
             	strcpy(backupsexo[i], sexo[i]);
             	backupaltura[i] = altura[i];
             	strcpy(backupemail[i], email[i]);
@@ -197,7 +220,7 @@ int main()
             	for(i = 0; i < quantidade; i++){
 				idusuario[i] = backupid[i];
             	strcpy(nome[i], backupnome[i]);
-            	strcpy(endereco[i], backupendereco[i]);
+            	//strcpy(endereco[i], backupendereco[i]);
             	strcpy(sexo[i], backupsexo[i]);
             	altura[i] = backupaltura[i];
             	strcpy(email[i], backupemail[i]);
