@@ -110,17 +110,18 @@ int main()
                 printf("Digite o novo nome ou confirme o anterior(%s):\n ",nome[numerousuario]);
                 fgets(nome[numerousuario], 30, stdin);
                 
-				printf("Digite a nova rua ou confirme a anterior(%d):\n ",end->rua[numerousuario]);
-                scanf("%d", &end->rua[numerousuario]);
+				printf("Digite a nova rua ou confirme a anterior(%d):\n ",end[numerousuario].rua);
+                scanf("%d", &end[numerousuario].rua);
                 
-                printf("Digite o novo cep ou confirme o anterior(%d):\n ",end->cep[numerousuario]);
-                scanf("%lld", &end->cep[numerousuario]);
+                printf("Digite o novo cep ou confirme o anterior(%d):\n ",end[numerousuario].cep);
+                scanf("%lld", &end[numerousuario].cep);
+                fflush(stdin);
                 
-                printf("Digite a nova cidade ou confirme a anterior(%s):\n ",end->cidade[numerousuario]);
-                fgets(end->cidade[numerousuario], 20, stdin);
+                printf("Digite a nova cidade ou confirme a anterior(%s):\n ", end[numerousuario].cidade);
+                fgets(end[numerousuario].cidade, 20, stdin);
                 
-                printf("Digite o novo estado ou confirme o anterior(%s):\n ",end->estado[numerousuario]);
-                scanf("%s", &end->estado[numerousuario]);
+                printf("Digite o novo estado ou confirme o anterior(%s):\n ",end[numerousuario].estado);
+                scanf("%s", &end[numerousuario].estado);
                 
                 printf("Digite o novo sexo ou confirme o anterior(%s):\n ",sexo[numerousuario]);
                 scanf("%s", &sexo[numerousuario]);
@@ -202,7 +203,7 @@ int main()
             
             printf("USUARIOS: \n");
             	for(i = 0; i < quantidade; i++){
-			//printf("\nUsuario %i:  %s\nendereco: %ssexo:%s\naltura:%.2lf\nemail:%s\nid do usuario: %d\n",i+0,nome[i],endereco[i],sexo[i],altura[i],email[i],idusuario[i]);
+			printf("\nUsuario %i:  %s\nsexo:%s\naltura:%.2lf\nemail:%s\nid do usuario: %d\nCEP:%lld\nCidade:%sEstado:%s\nrua:%d\n",i+0,nome[i],sexo[i],altura[i],email[i],idusuario[i],end[i].cep, end[i].cidade, end[i].estado, end[i].rua);
 		}
                 break;
             case 5: 
