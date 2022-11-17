@@ -11,6 +11,14 @@ struct endereco{
 
 end[1000];
 
+struct backupendereco{
+    int backuprua;
+    long int backupcep;
+    char backupcidade[20], backupestado[2];
+}
+
+backupend[1000];
+
 int main()
 {
 	
@@ -207,21 +215,29 @@ int main()
 		}
                 break;
             case 5: 
+            
 			printf("Backup Realizado com sucesso!");
             for(i = 0; i < quantidade; i++){
             	backupid[i] = idusuario[i];
             	strcpy(backupnome[i], nome[i]);
-            	//strcpy(backupendereco[i], endereco[i]);
+            	strcpy(backupend[i].backuprua, end[i].rua);
+            	strcpy(backupend[i].backupcep, end[i].cep);
+            	strcpy(backupend[i].backupcidade, end[i].cidade);
+            	strcpy(backupend[i].backupestado, end[i].estado);
             	strcpy(backupsexo[i], sexo[i]);
             	backupaltura[i] = altura[i];
             	strcpy(backupemail[i], email[i]);
 			}
+			
                 break;
             case 6: printf("Dados restaurados com sucesso!");
             	for(i = 0; i < quantidade; i++){
 				idusuario[i] = backupid[i];
             	strcpy(nome[i], backupnome[i]);
-            	//strcpy(endereco[i], backupendereco[i]);
+            	strcpy(end[i].rua, backupend[i].backuprua);
+            	strcpy(end[i].cep, backupend[i].backupcep);
+            	strcpy(end[i].cidade, backupend[i].backupcidade);
+            	strcpy(end[i].estado, backupend[i].backupestado);
             	strcpy(sexo[i], backupsexo[i]);
             	altura[i] = backupaltura[i];
             	strcpy(email[i], backupemail[i]);
